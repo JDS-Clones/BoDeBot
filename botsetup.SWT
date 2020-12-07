@@ -1,0 +1,81 @@
+[Setup Wizard Template]
+TemplateDate=6/11/98 9:45:26 PM
+
+[Select Project and Options]
+txtProjFile=E:\projects\vb_apps\Network\bodebot2_v2\bodebot2.vbp
+chkProjRebuild=0
+optBldSetup=True
+chkIncludeDEP=1
+optInternet=False
+optDEPOnly=False
+
+[Distribution Method]
+optFloppyTarg=False
+optSingleDirTarg=True
+optMultDirTarg=False
+
+[Single Directory]
+cboFloppyDrives=0
+cboFloppyDriveSize=0
+txtDirTarget=E:\projects\vb_apps\Network\bodebot2_v2_extras\rel\
+
+[Internet Package]
+optRemoteSite=True
+optLocalSite=False
+txtLocalSite=
+
+[Data Access]
+chkUseJet=1
+chkUseODBC=0
+Isam0=
+
+[ActiveX Server Components]
+File1="E:\projects\vb_apps\Network\bodebot2_v2\Bot Object\BotObject.dll",True,32763,True,False,,,0,False,False
+File2="E:\projects\vb_apps\Network\bodebot2_v2\DCC Object\DCCObject.dll",True,32763,True,False,,,0,False,False
+File3="E:\projects\vb_apps\Network\bodebot2_v2\Identd Object\IdentdObject.dll",True,32763,True,False,,,0,False,False
+File4="E:\projects\vb_apps\Network\bodebot2_v2\IRC Object\IRCObject.dll",True,32763,True,False,,,0,False,False
+File5="E:\projects\vb_apps\Network\bodebot2_v2\Hook Object\MsgHook.dll",True,32763,True,False,,,0,False,False
+File6=
+
+[Confirm Dependencies]
+File1="C:\WINNT\System32\richtx32.ocx",True,32764
+File2="C:\WINNT\System32\comctl32.ocx",True,32764
+File3="E:\Program Files\Microsoft Script Control\msscript.ocx",True,32764
+File4="C:\WINNT\System32\tabctl32.ocx",True,32764
+File5="C:\WINNT\System32\comdlg32.ocx",True,32764
+File6=
+
+[Shared ActiveX Application]
+optDeployApplication=True
+optDeployShared=False
+optRemoteServer1=True
+optRemoteServer0=False
+
+[File Summary]
+File1="C:\WINNT\System32\MSVBVM50.dll",True,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File2="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\StdOle2.tlb",True,"$(WinSysPathSysFile)",$(TLBRegister),False
+File3="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\OleAut32.dll",True,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File4="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\OlePro32.dll",True,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File5="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\AsycFilt.dll",True,"$(WinSysPathSysFile)",,False
+File6="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\Ctl3d32.dll",True,"$(WinSysPathSysFile)",,False
+File7="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\ComCat.dll",True,"$(WinSysPathSysFile)",$(DLLSelfRegister),False
+File8="C:\WINNT\System32\richtx32.ocx",True,"$(WinSysPath)",$(DLLSelfRegister),True
+File9="E:\DevStudio\VB\SETUPKIT\KITFIL32\SYS32\RichEd32.dll",True,"$(WinSysPathSysFile)",,False
+File10="C:\WINNT\System32\comctl32.ocx",True,"$(WinSysPath)",$(DLLSelfRegister),True
+File11="E:\Program Files\Microsoft Script Control\msscript.ocx",True,"$(WinSysPath)",,True
+File12="C:\WINNT\System32\tabctl32.ocx",True,"$(WinSysPath)",$(DLLSelfRegister),True
+File13="C:\WINNT\System32\comdlg32.ocx",True,"$(WinSysPath)",$(DLLSelfRegister),True
+File14="E:\projects\vb_apps\Network\bodebot2_v2\bodebot2.exe",True,"$(AppPath)",,False
+File15="E:\projects\vb_apps\Network\bodebot2_v2\bodebot2.DEP",True,"$(AppPath)",,False
+File16="E:\projects\vb_apps\Network\bodebot2_v2\user.scp",True,"$(AppPath)",,False
+File17="E:\projects\vb_apps\Network\bodebot2_v2\bode2.wav",True,"$(AppPath)",,False
+File18="E:\projects\vb_apps\Network\bodebot2_v2\bodebot2.ini",True,"$(AppPath)",,False
+File19="E:\projects\vb_apps\Network\bodebot2_v2\LICENSE.txt",True,"$(AppPath)",,False
+File20="E:\projects\vb_apps\Network\bodebot2_v2\notify.ini",True,"$(AppPath)",,False
+File21="E:\projects\vb_apps\Network\bodebot2_v2\required.scp",True,"$(AppPath)",,False
+File22="E:\projects\vb_apps\Network\bodebot2_v2\script.txt",True,"$(AppPath)",,False
+File23="E:\projects\vb_apps\Network\bodebot2_v2\servers.ini",True,"$(AppPath)",,False
+File24="E:\projects\vb_apps\Network\bodebot2_v2\bode.wav",True,"$(AppPath)",,False
+File25="E:\projects\vb_apps\Network\bodebot2_v2\Bot Object\pass.txt",True,"$(AppPath)",,False
+File26="E:\projects\vb_apps\Network\bodebot2_v2\Bot Object\bothelp.txt",True,"$(AppPath)",,False
+File27="E:\projects\vb_apps\Network\bodebot2_v2\Bot Object\bot.ini",True,"$(AppPath)",,False

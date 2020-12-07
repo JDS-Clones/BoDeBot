@@ -1,0 +1,7 @@
+VBGROUP 5.0
+StartupProject=bodebot2.vbp
+Project=Bot Object\BotObject.vbp
+Project=IRC Object\IRCObject.vbp
+Project=Hook Object\MsgHook.vbp
+Project=Identd Object\IdentdObject.vbp
+Project=DCC Object\DCCObject.vbp

@@ -1,0 +1,119 @@
+Rem=========================================
+Rem Script File with user defined functions
+Rem=========================================
+Function GetNextToken(ByRef szTemp, ByVal szTok)
+    Dim Y 
+    Y = InStr(1, szTemp, szTok)
+    If Y <> 0 Then
+        GetNextToken = Left(szTemp, Y - 1)
+        szTemp = Mid(szTemp, Y + 1)
+    Else
+        GetNextToken = szTemp
+    End If
+End Function
+Rem
+Rem
+Sub GetDeclare(ByVal szLine, ByVal szChannel)
+	Set Conn = CreateObject("ADODB.Connection")
+	Conn.Open "DRIVER=Microsoft Access Driver (*.mdb);DBQ=E:\devstudio\vb\winapi\win32api.mdb;"
+	SQL = "SELECT Name, FullName FROM Declares WHERE Name Like '%" & szLine & "%'"
+	Set rs = Conn.Execute(SQL)
+	If Not (rs.EOF And rs.BOF) Then
+		rs.MoveFirst
+		Do Until rs.EOF
+			BOT.Send "PRIVMSG " & szChannel & " :" & rs("FullName") & vbcrlf
+			rs.MoveNext
+		LOOP
+		rs.Close
+	Else
+		BOT.Send "PRIVMSG " & szChannel & " :Cannot Find: " & szLine & vbCrLf
+	End IF
+	Conn.Close
+End Sub
+Rem
+Rem
+Sub GetConst(ByVal szLine, ByVal szChannel)
+	Set Conn = CreateObject("ADODB.Connection")
+	Conn.Open "DRIVER=Microsoft Access Driver (*.mdb);DBQ=E:\devstudio\vb\winapi\win32api.mdb;"
+	SQL = "SELECT Name, FullName FROM Constants WHERE Name Like '%" & szLine & "%'"
+	Set rs = Conn.Execute(SQL)
+	If Not (rs.EOF And rs.BOF) Then
+		rs.MoveFirst
+		Do Until rs.EOF
+			BOT.Send "PRIVMSG " & szChannel & " :" & rs("FullName") & vbcrlf
+			rs.MoveNext
+		LOOP
+		rs.Close
+	Else
+		BOT.Send "PRIVMSG " & szChannel & " :Cannot Find: " & szLine & vbCrLf
+	End IF
+	Conn.Close
+End Sub
+Rem
+Rem
+Sub CussScold(Byval szLine, ByVal szChannel)
+	IF (instr(1,lcase(szLine),"fuck") > 0 OR instr(1,lcase(szLine),"shit") > 0 _
+	OR instr(1,lcase(szLine),"damn") > 0 OR instr(1,lcase(szLine),"bitch") > 0 _
+	OR instr(1,lcase(szLine),"asshole") > 0 OR instr(1,lcase(szLine),"dickhead") > 0 _
+	) Then
+		BOT.Send "PRIVMSG " & szChannel & " :Hey no need to cuss!" & vbCrLf
+		BOT.SendFromScriptToWindow szChannel, "-- Cuss --"
+	End If
+End Sub
+Rem
+Rem
+Sub WhereBode(Byval szLine, ByVal szChannel)
+	IF (instr(1,lcase(szLine),"bodebot") > 0 AND instr(1,lcase(szLine),"where") > 0) _
+	OR (instr(1,lcase(szLine),"bodebot") > 0 AND instr(1,lcase(szLine),"url") > 0) _
+	OR (instr(1,lcase(szLine),"bodebot") > 0 AND instr(1,lcase(szLine),"site") > 0) _
+	 Then
+		If instr(1,lcase(szLine),"porn")>0 or instr(1,lcase(szLine),"pr0n")>0 _
+		or instr(1,lcase(szLine),"sex")>0 or instr(1,lcase(szLine),"goat")>0 Then							
+			BOT.Send "PRIVMSG " & szChannel & " :msg wrexen xdcc send #5 [Wrexen and the goat]" & vbCrLf
+		Else
+			BOT.Send "PRIVMSG " & szChannel & " :http://www.felmlee.com/bodebot" & vbCrLf
+			BOT.SendFromScriptToWindow szChannel, "-- BoT URL --"
+		End If
+	End If
+End Sub
+Rem
+Rem
+Rem
+Sub WallOp(ByVal szChannel, ByVal szLine)
+	REM Sends an Op Notice
+	BOT.SendFromScriptToWindow szChannel, "[WallOp] " & szLine
+	For i=1 to Bot.ChanWins(szChannel).Nicklist.ListItems.Count
+		If Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,1,1) = "@" Then
+			BOT.Send "NOTICE " & Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,2) & " :[Wall: " & szChannel & "] " & szLine &vbCrLf
+		End If
+	Next
+End Sub
+Rem
+Rem
+Rem
+Sub KickNoOp(ByVal szChannel, ByVal szLine)
+	REM Kicks all non @
+	BOT.SendFromScriptToWindow szChannel, "[Mass Kick] " & szLine
+	For i=1 to Bot.ChanWins(szChannel).Nicklist.ListItems.Count
+		If Not Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,1,1) = "@" Then
+			If Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,1,1) = "+" Then
+				BOT.Send "KICK " & szChannel & " " & mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,2) & " :" & szLine &vbCrLf
+			Else
+				BOT.Send "KICK " & szChannel & " " & Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text & " :" & szLine &vbCrLf
+			End If
+		End If
+	Next
+End Sub
+Rem
+Rem
+Rem
+Sub KickUsers(ByVal szChannel, ByVal szLine)
+	REM Sends kicks all users with no @ or +
+	BOT.SendFromScriptToWindow szChannel, "[Mass Kick] " & szLine
+	For i=1 to Bot.ChanWins(szChannel).Nicklist.ListItems.Count
+		If (Not Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,1,1) = "@") OR _
+		(Not Mid(Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text,1,1) = "+") Then
+			BOT.Send "KICK " & szChannel & " " & Bot.ChanWins(szChannel).Nicklist.ListItems.Item(i).Text & " :" & szLine &vbCrLf
+		End If
+	Next
+End Sub

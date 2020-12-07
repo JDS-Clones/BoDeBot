@@ -1,0 +1,104 @@
+Sub onConnectionStatusChangeEvent(Status)
+
+	Rem Status=True on Connect
+	Rem Status=False on Disconnect
+	If Status=True Then
+		rem BOT.Send "JOIN :#microsoftdeveloper" & vbcrlf
+		rem BOT.Send "JOIN :#visualbasic" & vbcrlf
+		BOT.Send "JOIN :#bodebot" & vbcrlf
+	Else
+	End If
+
+End Sub
+
+Sub onBotCommandEvent(UserOb, szCommand, szParams)
+
+	Rem	Fires when we get a bot command
+	Select Case szCommand
+	Case ".test"
+		BOT.Send "PRIVMSG " & UserOb.User & " :thanks for testing me!" & vbCrLf
+	Case ".note"
+	Case ".page"
+	Case ".talk"
+	End Select
+
+End Sub
+
+Sub onChanCommandEvent(ChannelWindow, szCommand, szParams)
+
+	Rem	Fires when we get a non-default channel command
+	Dim params
+	Select Case LCase(szCommand)
+	Case "/bodebot"
+		params = "http://www.felmlee.com/bodebot"
+		BOT.SendFromScriptToWindow ChannelWindow.Tag, "[bodebot]" & params
+		BOT.Send "PRIVMSG " & ChannelWindow.Tag & " :" & params & vbcrlf
+	Case "/wall"
+		WallOp ChannelWindow.Tag, szParams
+	Case "/kicknoop"
+		KickNoOp ChannelWindow.Tag, szParams
+	Case Else
+	End Select
+
+End Sub
+
+Sub onChannelMessageEvent(szSender, szChannel, szLine)
+
+	Rem fires on channel messages
+'	
+	If instr(1,szLine,"bode") > 0 Then
+		BOT.Send "PRIVMSG " & BOT.NickName & " :" & szSender & " said """ & szLine & """" & vbcrlf
+	End if
+'
+'
+	Dim ChanComm
+	ChanComm = GetNextToken(szLine, " ")
+	Select Case LCase(ChanComm)
+	Case "!bodebot"
+		BOT.Send "PRIVMSG " & szChannel & " :http://www.felmlee.com/bodebot" & vbcrlf
+		BOT.SendFromScriptToWindow szChannel, "[!bodebot]"
+	Case "!goat"
+		BOT.Send "PRIVMSG " & szChannel & " :I Like g0ats!" & vbcrlf
+		BOT.SendFromScriptToWindow szChannel, "[!goat]"
+	Case Else
+	End Select
+
+End Sub
+
+Sub onConsoleCommandEvent(ConsoleWindow, szCommand, szParams)
+
+	Rem	Fires when we get a non-default console command
+
+End Sub
+
+Sub onCTCPCommandEvent(szSender, szCommand, szParams)
+
+	Rem	Fires when we get a non-default ctcp command
+
+End Sub
+
+Sub onMsgCommandEvent(MessageWindow, szCommand, szParams)
+
+	Rem	Fires when we get channel input
+
+End Sub
+
+
+Sub onNotifyListEvent(szNotifyList)
+
+	Rem	Fires when we get a notify alert
+	Rem	szNotifyList is a space delimited nick-list
+
+End Sub
+
+Sub onChannelJoinEvent(szChannel, szNick)
+
+	Rem	Fires when we or someone else joins a channel
+
+End Sub
+
+Sub onChannelPartEvent(szChannel, szNick)
+
+	Rem	Fires when we or someone else parts a channel
+
+End Sub

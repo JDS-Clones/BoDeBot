@@ -1,0 +1,26 @@
+#Section Header is [username]
+#pass is a required field with the user's password
+#note that the pass is encrypted.
+#the default found in this file is the string "bodebot"
+#bot is a required perm for any special bot functions
+#"c#" is a channel entry
+#the general format is field=Level@Object
+
+[bode]
+pass=142925282D26243B
+c1=5@#visualbasic
+c2=5@#bodebot
+c3=5@#mychannel
+bot=5@bot
+
+[frank]
+pass=142925282D26243B
+c1=3@bodebot
+c2=3@#somewhere
+bot=2@bot
+
+[jake]
+pass=142925282D26243B
+c1=3@#winprog
+c2=2@#windowsnt
+bot=2@bot

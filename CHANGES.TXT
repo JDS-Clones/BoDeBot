@@ -1,0 +1,42 @@
+7-3-98
+@Author Nick
+
+Minor bug fixes
+Deleted dead code from most objects.
+Implemented the AltNickName processing.
+Changed VERSION reply.
+Fixed file not found bug in setup dialog
+
+===================================================
+6-25-98
+@Author Nick
+
+IRC Object now reads 4k chunks. This provides better
+preformance.
+
+Added The following events to the script
+	onChannelJoin
+	onChannelPart
+	onNotifyList
+
+===================================================
+6-24-98
+@Author Nick
+
+Fixed "/topic" in Class CCLientManager.cls
+ProcessUserCommands()
+
+Optimized toggleScriptStatus() in CClientManager.cls
+
+Fixed ".topic" in Class CBotFactory.cls
+ProcessUserCommands()
+
+Eliminated TIME from StatusBar
+
+Changed Style of TabBarButtons
+
+Added new even to ClientManager.cls
+Public Event onHighLightEvent(ByVal szChannel As String)
+This lets us highlight a tab when we get a text highlight event.
+
+Added Tab Highlighting on the HighLight Event

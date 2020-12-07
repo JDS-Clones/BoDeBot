@@ -1,0 +1,21 @@
+.op  <#channel nick>
+.deop  <#channel nick>
+.+ban  <#channel params>
+.-ban  <#channel params>
+.say  <TARGET message>
+.who
+.kick  <#channel nick kick-message>
+.kickban  <#channel nick kick-message>
+.part  <#channel>
+.join  <#channel>
+.topic  <#channel topic>
+.+v  <#channel nick>
+.-v  <#channel nick>
+.talkshit -not implemented yet-
+.adduser  -not implemented yet-
+.deluser  -not implemented yet-
+.lsusers  -not implemented yet-
+.passwd  -not implemented yet-
+.info  -not implemented yet-
+.banlist  -not implemented yet-
+.permban  -not implemented yet-

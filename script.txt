@@ -1,0 +1,29 @@
+REM this is the script required for the client to run.
+REM You may modify the Subs in this script but do NOT
+REM delete them!
+REM To update changes, you must first disconnect from irc
+REM Hit Scripts|Reset and then load this back in
+
+
+Function consoleSend(szText)
+	consoleSend = szText	
+End Function
+
+Function chanSend(szText)
+	chanSend = szText 'return the stuff so it can be processed
+End Function
+
+Function messgSend(szText)
+	messgSend = szText 'return the stuff so it can be processed	
+End Function
+
+REM event to process raw data from irc
+REM before the client does.
+REM this returns the string to the client 
+REM for parsing
+Function gotData(szText)
+	gotData = szText 'you need to return this text
+	'exactly as it came in unless you know EXACTLY
+	'what you are doing.
+End Function
+

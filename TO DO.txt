@@ -1,0 +1,45 @@
+ASSIGNED TASKS:
+
+MsgHook Re-Write -> DrCert
+Button Bar Control -> ThundrBug
+Mirc-Box Control -> Momohead
+General Gui stuff -> JB
+Optimizations -> Wrexen
+
+
+
+(not necessarily in this order)
+NOte: anything prefixed by FIX should have higher priority
+TO DO LIST:
+
+1)Fix MDI Child Resize Too Small Crash
+2)Add Standard CTCP Commands to NickList Popup menu
+3)Message Window Should be created or get focus when clicking on nick in nicklist
+4)Fix DCC percentage problem
+5)Store Notify List in Notify.ini
+6)Fix random Script Editor Bug (saves things wrong overwriting other subs)
+7)Fix crash on Terminate (Exit() works fine...)
+8)Add proxy support
+9)Create Help FIle
+	-Document GUI
+	-Document General Command Set
+	-Document Exposed Script Objects
+	-Document Script Events
+10)Create Web Documentation
+	-Document GUI
+	-Document General Command Set
+	-Document Exposed Script Objects
+	-Document Script Events
+	-*Document Code!
+11)Create better web-based bug reporting system
+12)Add support for user-defined dynamic pop-up menus
+13)Add support for user-defined toolbar additions
+14)Add account creation for the bot
+15)Add account deletion for the bot
+16)Fix having to disconnect/reconnect for new option settings to take effect
+17)Fix NickList should sort on change
+18)Fix Copy/Paste
+19)Add Interface to script engine to start a dcc send
+20)Fix Crash (Console command processing should use same a channels)
+21)Add nick completion
+22)Fix show Auth: and other preliminary connection conversation
