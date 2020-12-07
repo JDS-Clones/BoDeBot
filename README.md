@@ -1,4 +1,5 @@
 # BoDeBot
- IRC Chatbot coded in Visual Basic 6
+ IRC Chatbot coded in Visual Basic 6 by Nicholas J. Felmlee
 
-Originally created by Nicholas J. Felmlee - if you can contact this person, please have them message me concerning the rights to post this code.
+
+To contact the original author: nick@felmlee.com
